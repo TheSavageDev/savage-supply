@@ -1,0 +1,190 @@
+{
+  "info": {
+    "name": "Savage Supply API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Kits",
+      "item": [
+        {
+          "name": "Create Kit",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/kits",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Home First Aid Kit\",\n    \"location\": \"Kitchen\",\n    \"description\": \"Main household first aid kit\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get All Kits",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/kits"
+          }
+        },
+        {
+          "name": "Get Kit by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/kits/{{kitId}}"
+          }
+        },
+        {
+          "name": "Update Kit",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/kits/{{kitId}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Kit Name\",\n    \"location\": \"Updated Location\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Kit",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/kits/{{kitId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        {
+          "name": "Create Item",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/items",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"kitId\": \"{{kitId}}\",\n    \"name\": \"Bandages\",\n    \"category\": \"BANDAGE\",\n    \"quantity\": 10,\n    \"minimumQuantity\": 5,\n    \"expirationDate\": \"2025-12-31\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get All Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items"
+          }
+        },
+        {
+          "name": "Search Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items/search?term={{searchTerm}}"
+          }
+        },
+        {
+          "name": "Get Items by Kit ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items/kit/{{kitId}}"
+          }
+        },
+        {
+          "name": "Get Expiring Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items/expiring?days=30"
+          }
+        },
+        {
+          "name": "Get Low Stock Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items/low-stock"
+          }
+        },
+        {
+          "name": "Get Item by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/items/{{itemId}}"
+          }
+        },
+        {
+          "name": "Update Item",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/items/{{itemId}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Item Name\",\n    \"quantity\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update Item Quantity",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/items/{{itemId}}/quantity",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"quantity\": 8\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Item",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/items/{{itemId}}"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "kitId",
+      "value": "your-kit-id",
+      "type": "string"
+    },
+    {
+      "key": "itemId",
+      "value": "your-item-id",
+      "type": "string"
+    },
+    {
+      "key": "searchTerm",
+      "value": "bandage",
+      "type": "string"
+    }
+  ]
+}
