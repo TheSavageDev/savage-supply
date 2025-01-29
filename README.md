@@ -6,7 +6,7 @@ A web application designed to track the contents and expiration dates of first a
 
 - Track first aid kit inventory
 - Monitor expiration dates
-- Notification system (email, SMS, push) for:
+- Notification system for:
   - Low stock alerts
   - Expiring items
   - Required restocking
@@ -15,7 +15,7 @@ A web application designed to track the contents and expiration dates of first a
 
 - Node.js (v18 or higher)
 - npm (v9 or higher)
-- MongoDB (v6 or higher)
+- PostgreSQL (v15 or higher)
 
 ## Getting Started
 
