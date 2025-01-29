@@ -1,0 +1,21 @@
+{
+  "name": "savage-supply",
+  "version": "1.0.0",
+  "description": "This project is designed to track the contents and expiration dates of first aid kits. It includes features for notifying users via email, text, or push notifications when supplies need to be restocked or when medicines and topicals expire.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:api\" \"npm run start:frontend\"",
+    "start:api": "cd api && npm run start:dev",
+    "start:frontend": "cd frontend && npm run dev",
+    "install:all": "npm i && cd api && npm i && cd ../frontend && npm i && cd ..",
+    "lint": "cd api && npm run lint && cd ../frontend && npm run lint",
+    "test": "cd api && npm test && cd ../frontend && npm test",
+    "build": "cd api && npm run build && cd ../frontend && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
