@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    @apply bg-white text-gray-900 transition-colors duration-200;
+  }
+
+  .dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700;
+    @apply dark:bg-blue-500 dark:hover:bg-blue-600;
+  }
+
+  .card {
+    @apply rounded-lg bg-white p-6 shadow-md;
+    @apply dark:bg-gray-800;
+  }
+}
